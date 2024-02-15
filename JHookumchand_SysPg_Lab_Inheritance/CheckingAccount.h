@@ -3,6 +3,8 @@
 class CheckingAccount :
     public BaseAccount
 {
-     
+public:
+     //methods
+    void Withdraw(float amount) override;
 };
 
