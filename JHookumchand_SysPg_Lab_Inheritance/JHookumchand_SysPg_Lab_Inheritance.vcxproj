@@ -134,6 +134,7 @@
     <ClCompile Include="SavingsAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\JHookumchand_SysPg_LabHelperLibrary\JHookumchand_SysPg_LabHelperLibrary\Helper.h" />
     <ClInclude Include="BaseAccount.h" />
     <ClInclude Include="CheckingAccount.h" />
     <ClInclude Include="CreditAccount.h" />

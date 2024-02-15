@@ -1,7 +1,7 @@
 #include "SavingsAccount.h"
 
 
-void SavingsAccount::Withdraw(float amount)
+void SavingsAccount::Withdraw(float& amount)
 {
 	if (mNumberOfWithdrawls > 3)
 	{

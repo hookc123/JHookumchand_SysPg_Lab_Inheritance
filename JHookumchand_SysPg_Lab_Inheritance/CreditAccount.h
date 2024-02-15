@@ -12,7 +12,7 @@ public:
     //constructor
     CreditAccount() :mData(0) {}
     
-    void Withdraw(float amount) override;
+    void Withdraw(float& amount) override;
 
 };
 

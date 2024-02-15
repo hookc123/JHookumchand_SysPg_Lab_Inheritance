@@ -4,6 +4,7 @@
 class SavingsAccount :
     public BaseAccount
 {
-    void Withdraw(float amount) override;
+public:
+    void Withdraw(float& amount) override;
 };
 

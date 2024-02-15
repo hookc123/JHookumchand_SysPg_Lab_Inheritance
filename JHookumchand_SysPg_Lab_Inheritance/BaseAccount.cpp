@@ -1,12 +1,12 @@
 #include "BaseAccount.h"
 
-void BaseAccount::Withdraw(float amount)
+void BaseAccount::Withdraw(float& amount)
 {
 	mAccountBalance -= amount;
 	mNumberOfWithdrawls++;
 }
 
-void BaseAccount::Deposit(float amount)
+void BaseAccount::Deposit(float& amount)
 {
 	mAccountBalance += amount;
 }

@@ -5,6 +5,6 @@ class CheckingAccount :
 {
 public:
      //methods
-    void Withdraw(float amount) override;
+    void Withdraw(float& amount) override;
 };
 

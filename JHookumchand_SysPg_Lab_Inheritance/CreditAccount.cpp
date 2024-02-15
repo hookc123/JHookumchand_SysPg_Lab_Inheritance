@@ -1,6 +1,6 @@
 #include "CreditAccount.h"
 
-void CreditAccount::Withdraw(float amount)
+void CreditAccount::Withdraw(float& amount)
 {
 	
 	if (mData+amount > 40) {
