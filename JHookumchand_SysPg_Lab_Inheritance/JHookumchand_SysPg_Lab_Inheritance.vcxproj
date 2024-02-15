@@ -130,10 +130,12 @@
     <ClCompile Include="BaseAccount.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="JHookumchand_SysPg_Lab_Inheritance.cpp" />
+    <ClCompile Include="SavingsAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAccount.h" />
     <ClInclude Include="CheckingAccount.h" />
+    <ClInclude Include="SavingsAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
