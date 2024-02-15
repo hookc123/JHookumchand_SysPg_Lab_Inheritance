@@ -6,8 +6,8 @@ public:
 	//constructor
 	BaseAccount() 
 	{
-		float mAccountBalance = 0;
-		int mNumberOfWithdrawls = 0;
+		mAccountBalance = 0;
+		mNumberOfWithdrawls = 0;
 	}
 	//methods
 	virtual void Withdraw(float amount);
