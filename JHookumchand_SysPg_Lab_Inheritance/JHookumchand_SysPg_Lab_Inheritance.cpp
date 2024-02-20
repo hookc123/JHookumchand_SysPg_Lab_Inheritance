@@ -5,7 +5,7 @@
 #include "CheckingAccount.h"
 #include "SavingsAccount.h"
 #include "CreditAccount.h"
-#include "../../JHookumchand_SysPg_LabHelperLibrary/JHookumchand_SysPg_LabHelperLibrary/Helper.h"
+#include "Helper.h"
 void deposit(BaseAccount* account, float amount)
 {
 	account->Deposit(amount);
@@ -39,10 +39,7 @@ int main()
 {
 	srand(time(0));
 
-#define MEMORY_LEAK_LINE -1
-
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtSetBreakAlloc(MEMORY_LEAK_LINE); // DO NOT COMMENT OUT THIS LINE
+	Helper::memoryLeak();
 
 	float deposit1 = Helper::randNum();
 	float deposit2 = Helper::randNum();

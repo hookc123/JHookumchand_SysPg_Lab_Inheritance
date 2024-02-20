@@ -89,4 +89,11 @@ namespace Helper
 			min = rand();
 		} while (min > max);
 	}
+	void memoryLeak()
+	{
+		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+		_CrtSetBreakAlloc(-1); // set block of memory to find memory leak
+		_CrtDumpMemoryLeaks();
+	}
+
 }
