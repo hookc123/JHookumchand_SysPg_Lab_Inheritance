@@ -6,6 +6,7 @@
 #include "SavingsAccount.h"
 #include "CreditAccount.h"
 #include "Helper.h"
+#include <fstream>
 void deposit(BaseAccount* account, float amount)
 {
 	account->Deposit(amount);
@@ -103,11 +104,24 @@ int main()
 		} while (choice != 2);
 
 	} while (choice != 3);
+	std::fstream outFile;
+	outFile.open("Account_Balance.bin", std::ios_base::binary);
+
+	if (outFile.is_open())
+	{
+		float balances[3] = { hookChecking->GetBalance(),hookSavings->GetBalance(),hookCredit->GetBalance() };
+		outFile.write((char*)balances, sizeof(balances));
+		
+	}
+	else {
+		std::cout<< "Error cannot write file" << std::endl;
+	}
+	outFile.close();
+
 	delete hookChecking;
 	delete hookSavings;
 	delete hookCredit;
 
-	//std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
