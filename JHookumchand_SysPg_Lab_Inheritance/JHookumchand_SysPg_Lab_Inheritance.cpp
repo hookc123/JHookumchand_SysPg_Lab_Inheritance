@@ -41,10 +41,20 @@ int main()
 	srand(time(0));
 
 	Helper::memoryLeak();
-
-	float deposit1 = Helper::randNum();
-	float deposit2 = Helper::randNum();
-	float deposit3 = Helper::randNum();
+	std::ifstream inFile("Account_Balance.bin", std::ios_base::binary);
+	float deposit1, deposit2,deposit3;
+	if (inFile.is_open())
+	{
+		inFile.read((char*)(&deposit1), sizeof(deposit1));
+		inFile.read((char*)(&deposit2), sizeof(deposit2));
+		inFile.read((char*)(&deposit3), sizeof(deposit3));
+		inFile.close();
+	}
+	else {
+		float deposit1 = Helper::randNum();
+		float deposit2 = Helper::randNum();
+		float deposit3 = Helper::randNum();
+	}
 	CheckingAccount* hookChecking= new CheckingAccount();
 	hookChecking->Deposit(deposit1);
 	SavingsAccount* hookSavings=new SavingsAccount;
@@ -104,20 +114,23 @@ int main()
 		} while (choice != 2);
 
 	} while (choice != 3);
-	std::fstream outFile;
+	std::ofstream outFile;
 	outFile.open("Account_Balance.bin", std::ios_base::binary);
 
 	if (outFile.is_open())
 	{
 		float balances[3] = { hookChecking->GetBalance(),hookSavings->GetBalance(),hookCredit->GetBalance() };
 		outFile.write((char*)balances, sizeof(balances));
-		
+		outFile.close();
 	}
 	else {
 		std::cout<< "Error cannot write file" << std::endl;
 	}
-	outFile.close();
-
+	
+		std::cout << deposit1 << std::endl;
+		std::cout << deposit2 << std::endl;
+		std::cout << deposit3 << std::endl;
+	
 	delete hookChecking;
 	delete hookSavings;
 	delete hookCredit;
